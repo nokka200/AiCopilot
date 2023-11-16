@@ -15,13 +15,14 @@ class Program
     static async Task StartChatAsync()
     {
         string modelPath = (Directory.GetCurrentDirectory() + $"/model/{modelName}");
-        string prompt = "Start";
+        var prompt = "Transcript of a dialog, where the User interacts with an Assistant named Bob. Bob is helpful, kind, honest, good at writing, and never fails to answer the User's requests immediately and with precision.\r\n\r\nUser: ";
+
 
         ModelParams parameters = new ModelParams(modelPath)
         {
             ContextSize = 1024,
             Seed = 1337,
-            GpuLayerCount = 5
+            GpuLayerCount = 20
         };
 
         using LLamaWeights model = LLamaWeights.LoadFromFile(parameters);
