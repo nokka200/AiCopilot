@@ -15,7 +15,7 @@ class Program
     static async Task StartChatAsync()
     {
         string modelPath = (Directory.GetCurrentDirectory() + $"/model/{modelName}");
-        var prompt = "Transcript of a dialog, where the User interacts with an Assistant named Bob. Bob is helpful, kind, honest, good at writing, and never fails to answer the User's requests immediately and with precision.\r\n\r\nUser: ";
+        var prompt = "Transcript of a dialog, where the User interacts with an Assistant named Bob. Bob is helpful, kind, honest, good at writing, and never fails to answer the User's requests immediately and with precision.\r\n\r\n";
 
 
         ModelParams parameters = new ModelParams(modelPath)
